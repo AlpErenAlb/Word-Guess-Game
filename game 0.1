@@ -1,0 +1,37 @@
+import random
+sayi=random.randint(0, 500)
+seviye=int(input("Seviye seç: 1)10 hak 'acemi'  2)7 hak 'deneyimli'  3)5 hak 'usta': "))
+if seviye==1:
+    a=0
+elif seviye==2:
+    a=3
+elif seviye==3:
+    a=5
+
+tahmin=int(input("Tahmin giriniz: "))
+while a<9:
+    if sayi<tahmin and tahmin<=500:
+        a+=1
+        print("Daha küçür bir sayı seç!")
+        print(10-a,"Hakkın var!")
+        tahmin=int(input("Tekrar dene!: "))
+    elif tahmin<0:
+        print("Sayı 0 dan büyük olmalı!")
+        print("Hakkın gitmedi ama daha dikkatli ol!")
+        tahmin=int(input("Tekrar dene!: "))
+    elif tahmin>500:
+        print("Sayı 500 den küçük olmalı!")
+        print("Hakkın gitmedi ama daha dikkatli ol!")
+        tahmin=int(input("Tekrar dene!: "))
+    elif sayi>tahmin:
+        a+=1
+        print("Daha büyük bir sayı seç! ")
+        print(10-a,"Hakkın var!")
+        tahmin=int(input("Tekrar dene!: "))
+    elif sayi==tahmin:
+        print("Doğru!")
+        print("Beni çok sinirlendirdin! Dünyayı yok edeceğim!!")
+    
+if a==9:
+    print("Kaybettin! GG Ez")
+    print("Doğru cevap:",sayi)
