@@ -1,0 +1,32 @@
+import random
+a=0
+sayi=random.randint(0, 500)
+print("10 Hakkın var! ")
+tahmin=int(input("Tahmin giriniz: "))
+while a<9:
+    if sayi<tahmin and tahmin<=500:
+        a+=1
+        print("Sayın biraz büyük sanki!")
+        print(a,"kere yanlış yaptın!")
+        tahmin=int(input("Tekrar dene!: "))
+    elif tahmin<0:
+        print("Sayı 0 dan büyük olmalı!")
+        print("Hakkın gitmedi ama daha dikkatli ol!")
+        tahmin=int(input("Tekrar dene!: "))
+    elif tahmin>500:
+        print("Sayı 500 den küçük olmalı!")
+        print("Hakkın gitmedi ama daha dikkatli ol!")
+        tahmin=int(input("Tekrar dene!: "))
+    elif sayi>tahmin:
+        a+=1
+        print("Sayı biraz küçük sanki! ")
+        print(a,"kere yanlış yaptın!")
+        tahmin=int(input("Tekrar dene!: "))
+    else:
+        print("Doğru!")
+        print("Beni çok sinirlendirdin! Dünyayı yok edeceğim!!")
+        break
+
+    if a==9:
+        print("Kaybettin! GG Ez")
+        print("Doğru cevap:",sayi)
